@@ -13,6 +13,9 @@ newsapi = NewsApiClient(api_key=NEWSAPI_KEY)
 
 @tool
 def scrape_top_news(category):
+    """Take the category as an input string.
+        Scrape top first news from the category,
+        returns the output as a string."""
     try:
         response = newsapi.get_top_headlines(category=category)
         response = response["articles"][0:5]
